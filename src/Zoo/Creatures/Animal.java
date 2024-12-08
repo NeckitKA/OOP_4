@@ -8,7 +8,8 @@ abstract public class Animal {
     private int age;
     private final boolean gender;
     private float weight;
-//    TODO: можно добавить логику детей и родителей
+
+    // TODO: можно добавить логику детей и родителей
     public Animal(String name, String type, String habitat, String livingSpace, int age, boolean gender, float weight) {
         this.name = name;
         this.type = type;
@@ -59,14 +60,17 @@ abstract public class Animal {
         this.weight = weight;
     }
 
-    public String pat(Animal animal) {
-        return "Животное радо :)";
+    public String pat() {
+        return "Животное " + this.getName() + " радо :)";
     }
-    public String feed(Animal animal) {
-        return animal.getName() + " теперь сыт(а) :)";
+
+    public String feed() {
+        return "Животное " + this.getName() + " теперь сыто :)";
     }
-    public String photo() {
+
+    public static String photo() {
         return "Фото сделано :)";
     }
+
     public abstract String takeCare();
 }

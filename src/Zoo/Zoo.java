@@ -1,12 +1,13 @@
 package Zoo;
 
 import Zoo.Creatures.*;
+
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 public class Zoo {
 
-    private ArrayList<Animal> animals;
+    protected ArrayList<Animal> animals;
 
     public Zoo() {
         this.animals = new ArrayList<>();
@@ -15,16 +16,16 @@ public class Zoo {
     public String addAnimal(Animal animal) {
         for (Animal existingAnimal : animals) {
             if (existingAnimal.getName().equalsIgnoreCase(animal.getName())) {
-                return "Животное с именем " + animal.getName() + " уже существует.";
+                return "Животное с именем " + animal.getName() + " уже существует.\n";
             }
         }
         animals.add(animal);
-        return animal.getName() + " добавлен(а).";
+        return animal.getName() + " добавлен(а).\n";
     }
 
     public String removeAnimal(String name) {
         Animal animal = findAnimalByName(name);
-        if (animal!=null) {
+        if (animal != null) {
             animals.remove(animal);
             return animal.getName() + " удален(а).";
         } else {
@@ -89,7 +90,7 @@ public class Zoo {
 
     public String showAllAnimals(int type) {
         if (animals.isEmpty()) {
-            return "Зоопарк пуст.";
+            return "Зоопарк пуст.\n";
         } else {
             StringBuilder result = new StringBuilder();
             for (Animal animal : animals) {
@@ -108,7 +109,8 @@ public class Zoo {
                     }
                 }
             }
-            return result.length() > 0 ? result.toString() : "Животные указанного типа не найдены.";
+            return result.length() > 0 ? result.toString() :
+                    "Животные не найдены или неправильный выбор.";
         }
     }
 
@@ -121,14 +123,12 @@ public class Zoo {
         return null;
     }
 
-    private String findAnimalInfo(Animal animal) {
+    public String findAnimalInfo(Animal animal) {
         if (animal == null) {
-            return "Животное не найдено.";
+            return "Животное не найдено.\n";
         }
-
         StringBuilder result = new StringBuilder();
         Class<?> clazz = animal.getClass();
-
         while (clazz != null) {
             for (Method method : clazz.getDeclaredMethods()) {
                 if (method.getName().startsWith("get") && method.getParameterCount() == 0) {
@@ -142,14 +142,24 @@ public class Zoo {
             }
             clazz = clazz.getSuperclass();
         }
-        return result.toString();
+        return result.toString()
+                .replace("Class: class Zoo.Creatures.Bird", "Class: Bird")
+                .replace("Class: class Zoo.Creatures.Mammal", "Class: Mammal")
+                .replace("Class: class Zoo.Creatures.Artiodactyl", "Class: Artiodactyl");
     }
-    // TODO: взаимодействия с животным
-    /*public String interactWithAnimal(int choice) {
+
+    public String interactWithAnimal(int choice, Animal animal) {
         switch (choice) {
-            case 1 -> return feed
+            case 1:
+                return animal.pat();
+            case 2:
+                return animal.feed();
+            case 3:
+                return Animal.photo();
+            case 4:
+                return animal.takeCare();
+            default:
+                return "Неверный выбор. Попробуйте снова.";
         }
-    }*/
-
+    }
 }
-

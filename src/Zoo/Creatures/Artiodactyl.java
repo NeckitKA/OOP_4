@@ -2,7 +2,7 @@ package Zoo.Creatures;
 
 public class Artiodactyl extends Mammal {
     private float hoofLength;
-        private float hoofWidth;
+    private float hoofWidth;
 
 
     public Artiodactyl(String name, String type, String habitat, String livingSpace, int age, boolean gender,
