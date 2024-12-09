@@ -505,5 +505,11 @@ public class Menu {
         } catch (IOException e) {
             System.err.println("Ошибка при чтении конфигурации: " + e.getMessage());
         }
+        catch (NullPointerException e) {
+            System.err.println("Ошибка при чтении конфигурации: " + e.getMessage());
+        }
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.err.println("Ошибка при чтении конфигурации: " + e.getMessage());
+        }
     }
 }
