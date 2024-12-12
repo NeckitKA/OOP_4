@@ -1,0 +1,15 @@
+@startuml
+package Zoo {
+    class Zoo {
+        - ArrayList<Animal> animals
+        + Zoo()
+        + String addAnimal(Animal animal)
+        + String removeAnimal(String name)
+        + String updateAnimalInfo(String name, int fieldNumber, Object newValue)
+        + String showAllAnimals(int type)
+        + Animal findAnimalByName(String name)
+        + String findAnimalInfo(Animal animal)
+        + String interactWithAnimal(int choice, Animal animal)
+    }
+}
+@enduml

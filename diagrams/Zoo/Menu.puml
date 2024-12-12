@@ -1,0 +1,20 @@
+@startuml
+class Zoo.Menu {
+- {static} Scanner scanner
+- {static} Zoo zoo
+- {static} void showMenu()
+- {static} int getValidIntegerInput()
+- {static} float getValidFloatInput()
+- {static} boolean getValidBooleanInput()
+- {static} void showAnimals()
+- {static} void addAnimal()
+- {static} void updateAnimalInfo()
+- {static} void removeAnimal()
+- {static} void interactWithAnimal()
++ {static} String handleMainChoice()
+- {static} void saveConfig()
+- {static} void readConfig()
+}
+
+
+@enduml

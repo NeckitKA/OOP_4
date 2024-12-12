@@ -1,0 +1,19 @@
+@startuml
+class Zoo.Creatures.Bird {
+- boolean canFly
+- float wingSpan
+- boolean eggLaying
+- String beakType
++ boolean getCanFly()
++ float getWingSpan()
++ boolean getEggLaying()
++ String getBeakType()
++ void setWingSpan(float)
++ String takeCare()
+}
+
+
+
+
+Zoo.Creatures.Animal <|-- Zoo.Creatures.Bird
+@enduml

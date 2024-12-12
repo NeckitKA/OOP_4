@@ -1,0 +1,15 @@
+@startuml
+class Zoo.Creatures.Artiodactyl {
+- float hoofLength
+- float hoofWidth
++ float getHoofLength()
++ float getHoofWidth()
++ void setHoofLength(float)
++ void setHoofWidth(float)
+}
+
+
+
+
+Zoo.Creatures.Mammal <|-- Zoo.Creatures.Artiodactyl
+@enduml

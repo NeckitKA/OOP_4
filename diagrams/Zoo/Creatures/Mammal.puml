@@ -1,0 +1,16 @@
+@startuml
+class Zoo.Creatures.Mammal {
+- String hairType
+- boolean milkProduction
+- float bodyTemperature
++ String getHairType()
++ boolean getMilkProduction()
++ float getBodyTemperature()
++ String takeCare()
+}
+
+
+
+
+Zoo.Creatures.Animal <|-- Zoo.Creatures.Mammal
+@enduml

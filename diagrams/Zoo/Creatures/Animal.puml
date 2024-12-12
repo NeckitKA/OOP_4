@@ -1,0 +1,27 @@
+@startuml
+abstract class Zoo.Creatures.Animal {
+- String name
+- String type
+- String habitat
+- String livingSpace
+- int age
+- boolean gender
+- float weight
++ String getName()
++ String getType()
++ String getHabitat()
++ String getLivingSpace()
++ int getAge()
++ boolean getGender()
++ float getWeight()
++ void setLivingSpace(String)
++ void setAge(int)
++ void setWeight(float)
++ String pat()
++ String feed()
++ {static} String photo()
++ {abstract}String takeCare()
+}
+
+
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+
+!include Main.puml
+!include Zoo/Zoo.puml
+!include Zoo/Menu.puml
+!include Zoo/Creatures/Animal.puml
+!include Zoo/Creatures/Bird.puml
+!include Zoo/Creatures/Artiodactyl.puml
+!include Zoo/Creatures/Mammal.puml
+Zoo.Zoo -[hidden]-> Menu
+@enduml
